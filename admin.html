@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Makrana Marble — Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --bg: #0f0e0c;
+  --surface: #1a1816;
+  --surface2: #242220;
+  --surface3: #2c2a27;
+  --border: rgba(207,200,188,0.12);
+  --border-focus: rgba(184,148,90,0.6);
+  --gold: #b8945a;
+  --gold-light: #d4af7a;
+  --ivory: #f8f5f0;
+  --stone: #cfc8bc;
+  --warm-gray: #9e9690;
+  --green: #4caf50;
+  --red: #ef5350;
+  --blue: #42a5f5;
+}
+body { background:var(--bg); color:var(--ivory); font-family:'Jost',sans-serif; font-weight:300; min-height:100vh; }
+
+/* ── LOGIN SCREEN ── */
+#loginScreen {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(184,148,90,0.07) 0%, transparent 70%),
+              var(--bg);
+}
+.login-box {
+  background:var(--surface); border:1px solid var(--border);
+  padding:3rem 2.5rem; width:100%; max-width:380px; text-align:center;
+}
+.login-logo { font-family:'Cinzel',serif; font-size:1.1rem; letter-spacing:0.2em; color:var(--gold-light); margin-bottom:0.4rem; }
+.login-sub { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm-gray); margin-bottom:2.5rem; }
+.login-box input {
+  width:100%; background:var(--surface2); border:1px solid var(--border);
+  color:var(--ivory); font-family:'Jost',sans-serif; font-size:0.9rem;
+  padding:0.85rem 1rem; outline:none; text-align:center; letter-spacing:0.2em;
+  margin-bottom:1rem; transition:border-color 0.3s;
+}
+.login-box input:focus { border-color:var(--border-focus); }
+.login-btn {
+  width:100%; background:var(--gold); color:#0f0e0c; border:none;
+  font-family:'Jost',sans-serif; font-size:0.75rem; letter-spacing:0.2em;
+  text-transform:uppercase; padding:1rem; cursor:pointer; font-weight:500;
+  transition:background 0.3s;
+}
+.login-btn:hover { background:var(--gold-light); }
+.login-error { color:var(--red); font-size:0.75rem; margin-top:0.8rem; display:none; }
+
+/* ── ADMIN LAYOUT ── */
+#adminApp { display:none; min-height:100vh; }
+
+.admin-header {
+  background:var(--surface); border-bottom:1px solid var(--border);
+  padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:50;
+}
+.admin-header-logo { font-family:'Cinzel',serif; font-size:0.9rem; letter-spacing:0.18em; color:var(--gold-light); }
+.admin-header-logo span { font-family:'Jost',sans-serif; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-gray); margin-left:0.8rem; text-transform:uppercase; }
+.header-actions { display:flex; gap:0.8rem; align-items:center; }
+.btn { font-family:'Jost',sans-serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; padding:0.6rem 1.4rem; border:none; cursor:pointer; font-weight:500; transition:all 0.2s; }
+.btn-gold { background:var(--gold); color:#0f0e0c; }
+.btn-gold:hover { background:var(--gold-light); }
+.btn-outline { background:transparent; border:1px solid var(--border); color:var(--stone); }
+.btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+.btn-green { background:var(--green); color:#fff; }
+.btn-green:hover { background:#66bb6a; }
+.btn-red { background:transparent; border:1px solid rgba(239,83,80,0.4); color:var(--red); font-size:0.65rem; padding:0.4rem 0.9rem; }
+.btn-red:hover { background:rgba(239,83,80,0.1); }
+.btn-blue { background:var(--blue); color:#fff; }
+.btn-blue:hover { background:#64b5f6; }
+
+.admin-body { display:flex; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width:220px; min-height:calc(100vh - 57px); background:var(--surface);
+  border-right:1px solid var(--border); padding:1.5rem 0; flex-shrink:0;
+  position:sticky; top:57px; height:calc(100vh - 57px); overflow-y:auto;
+}
+.sidebar-label { font-size:0.58rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--warm-gray); padding:0 1.5rem; margin-bottom:0.5rem; margin-top:1.5rem; }
+.sidebar-label:first-child { margin-top:0; }
+.sidebar-link {
+  display:flex; align-items:center; gap:0.7rem; padding:0.75rem 1.5rem;
+  font-size:0.8rem; color:var(--stone); cursor:pointer; transition:all 0.2s;
+  border-left:2px solid transparent; text-decoration:none;
+}
+.sidebar-link:hover { color:var(--ivory); background:rgba(255,255,255,0.03); }
+.sidebar-link.active { color:var(--gold-light); border-left-color:var(--gold); background:rgba(184,148,90,0.06); }
+.sidebar-icon { font-size:1rem; }
+
+/* ── MAIN CONTENT ── */
+.admin-main { flex:1; padding:2rem; overflow-y:auto; min-height:calc(100vh - 57px); }
+
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* ── CARD ── */
+.card { background:var(--surface); border:1px solid var(--border); margin-bottom:1.5rem; }
+.card-header {
+  padding:1.2rem 1.5rem; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.card-title { font-family:'Cinzel',serif; font-size:0.85rem; letter-spacing:0.1em; color:var(--gold-light); }
+.card-body { padding:1.5rem; }
+
+/* ── FORM ELEMENTS ── */
+.field { margin-bottom:1.2rem; }
+.field label { display:block; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm-gray); margin-bottom:0.4rem; }
+.field input, .field textarea, .field select {
+  width:100%; background:var(--surface2); border:1px solid var(--border);
+  color:var(--ivory); font-family:'Jost',sans-serif; font-size:0.88rem;
+  padding:0.75rem 1rem; outline:none; transition:border-color 0.3s; resize:vertical;
+}
+.field input:focus, .field textarea:focus, .field select:focus { border-color:var(--border-focus); }
+.field select option { background:var(--surface2); }
+.field-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.field-row-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; }
+
+/* ── PRICE TABLE EDITOR ── */
+.price-editor-row {
+  display:grid; grid-template-columns:2fr 2fr 110px 110px auto; gap:0.8rem;
+  align-items:center; padding:0.8rem 0; border-bottom:1px solid var(--border);
+}
+.price-editor-row:last-child { border-bottom:none; }
+.price-editor-head { font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--warm-gray); padding:0.5rem 0; }
+.price-input {
+  background:var(--surface2); border:1px solid var(--border); color:var(--ivory);
+  font-family:'Jost',sans-serif; font-size:0.88rem; padding:0.55rem 0.8rem; outline:none;
+  transition:border-color 0.3s; width:100%;
+}
+.price-input:focus { border-color:var(--border-focus); }
+.auto-badge {
+  background:rgba(184,148,90,0.15); border:1px solid rgba(184,148,90,0.3);
+  color:var(--gold); font-size:0.65rem; letter-spacing:0.1em; padding:0.3rem 0.6rem;
+  white-space:nowrap;
+}
+
+/* ── GALLERY EDITOR ── */
+.gallery-editor-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; }
+.gallery-card {
+  background:var(--surface2); border:1px solid var(--border); padding:1rem;
+  display:flex; flex-direction:column; gap:0.7rem; position:relative;
+}
+.gallery-card .remove-btn {
+  position:absolute; top:0.5rem; right:0.5rem;
+  background:rgba(239,83,80,0.2); border:none; color:var(--red);
+  width:24px; height:24px; cursor:pointer; font-size:0.9rem; border-radius:2px;
+  transition:background 0.2s;
+}
+.gallery-card .remove-btn:hover { background:rgba(239,83,80,0.4); }
+.gallery-preview {
+  width:100%; height:120px; background:var(--surface3);
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden; position:relative; cursor:pointer;
+}
+.gallery-preview img { width:100%; height:100%; object-fit:cover; }
+.gallery-preview .upload-hint {
+  display:flex; flex-direction:column; align-items:center; gap:0.3rem;
+  color:var(--warm-gray); font-size:0.72rem;
+}
+.gallery-preview .upload-hint span:first-child { font-size:1.5rem; opacity:0.4; }
+.img-file-input { display:none; }
+
+.caption-input {
+  background:var(--surface); border:1px solid var(--border); color:var(--ivory);
+  font-family:'Jost',sans-serif; font-size:0.8rem; padding:0.5rem 0.7rem;
+  outline:none; width:100%; transition:border-color 0.3s;
+}
+.caption-input:focus { border-color:var(--border-focus); }
+
+.wide-toggle {
+  display:flex; align-items:center; gap:0.5rem;
+  font-size:0.7rem; color:var(--warm-gray); cursor:pointer;
+}
+.wide-toggle input { width:auto; cursor:pointer; accent-color:var(--gold); }
+
+.add-image-btn {
+  border:2px dashed rgba(184,148,90,0.3); background:transparent;
+  color:var(--gold); font-family:'Jost',sans-serif; font-size:0.72rem;
+  letter-spacing:0.15em; text-transform:uppercase; padding:2rem;
+  cursor:pointer; width:100%; transition:all 0.3s;
+}
+.add-image-btn:hover { border-color:var(--gold); background:rgba(184,148,90,0.05); }
+
+/* ── TOAST ── */
+#toast {
+  position:fixed; bottom:2rem; right:2rem; z-index:9999;
+  background:var(--green); color:#fff; font-family:'Jost',sans-serif;
+  font-size:0.8rem; letter-spacing:0.1em; padding:0.9rem 1.8rem;
+  transform:translateY(100px); opacity:0; transition:all 0.35s;
+  pointer-events:none;
+}
+#toast.show { transform:translateY(0); opacity:1; }
+
+/* ── LIVE PREVIEW BADGE ── */
+.preview-link {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  font-size:0.7rem; letter-spacing:0.1em; color:var(--blue);
+  text-decoration:none; border:1px solid rgba(66,165,245,0.3);
+  padding:0.5rem 1rem; transition:all 0.3s;
+}
+.preview-link:hover { background:rgba(66,165,245,0.08); border-color:var(--blue); }
+
+/* ── SAVE BAR ── */
+.save-bar {
+  position:sticky; bottom:0; background:rgba(26,24,22,0.95);
+  backdrop-filter:blur(10px); border-top:1px solid var(--border);
+  padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between;
+  margin:-2rem; margin-top:2rem;
+}
+.save-bar p { font-size:0.72rem; color:var(--warm-gray); }
+
+@media(max-width:768px){
+  .sidebar{display:none;}
+  .price-editor-row{grid-template-columns:1fr 1fr; gap:0.5rem;}
+  .price-editor-head{display:none;}
+  .field-row,.field-row-3{grid-template-columns:1fr;}
+  .admin-main{padding:1rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── LOGIN ── -->
+<div id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">MAKRANA MARBLE</div>
+    <div class="login-sub">Admin Panel</div>
+    <input type="password" id="passInput" placeholder="Enter Password" onkeydown="if(event.key==='Enter')tryLogin()" />
+    <button class="login-btn" onclick="tryLogin()">Login →</button>
+    <p class="login-error" id="loginError">Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<!-- ── ADMIN APP ── -->
+<div id="adminApp">
+  <header class="admin-header">
+    <div>
+      <span class="admin-header-logo">MAKRANA MARBLE</span>
+      <span style="font-family:'Cinzel',serif;font-size:0.9rem;color:var(--gold-light);"><span style="color:var(--warm-gray);margin:0 0.5rem;">|</span>Admin Panel</span>
+    </div>
+    <div class="header-actions">
+      <a href="index.html" target="_blank" class="preview-link">🔗 View Live Site</a>
+      <button class="btn btn-gold" onclick="saveAll()">💾 Save All Changes</button>
+      <button class="btn btn-outline" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="admin-body">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-label">Pages</div>
+      <div class="sidebar-link active" onclick="switchTab('prices')" id="tab-prices">
+        <span class="sidebar-icon">💰</span> Pricing
+      </div>
+      <div class="sidebar-link" onclick="switchTab('gallery')" id="tab-gallery">
+        <span class="sidebar-icon">🖼️</span> Gallery
+      </div>
+      <div class="sidebar-label">Content</div>
+      <div class="sidebar-link" onclick="switchTab('hero')" id="tab-hero">
+        <span class="sidebar-icon">🏠</span> Hero Section
+      </div>
+      <div class="sidebar-link" onclick="switchTab('about')" id="tab-about">
+        <span class="sidebar-icon">📖</span> About Text
+      </div>
+      <div class="sidebar-link" onclick="switchTab('contact')" id="tab-contact">
+        <span class="sidebar-icon">📞</span> Contact Info
+      </div>
+      <div class="sidebar-label">Settings</div>
+      <div class="sidebar-link" onclick="switchTab('password')" id="tab-password">
+        <span class="sidebar-icon">🔒</span> Change Password
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+
+      <!-- ── PRICES TAB ── -->
+      <div class="tab-panel active" id="panel-prices">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">💰 Price Manager</span>
+            <button class="btn btn-outline" onclick="addPriceRow()">+ Add Marble Type</button>
+          </div>
+          <div class="card-body">
+            <p style="font-size:0.75rem;color:var(--warm-gray);margin-bottom:1.5rem;">
+              Enter the <strong style="color:var(--gold);">Market Price</strong> — our price is automatically set 10% lower. You can also override it manually.
+            </p>
+            <div class="price-editor-row price-editor-head">
+              <span>Marble Name</span><span>Usage / Category</span><span>Market ₹/sq.ft</span><span>Our Price ₹/sq.ft</span><span></span>
+            </div>
+            <div id="priceRows"></div>
+          </div>
+        </div>
+
+        <div class="save-bar">
+          <p>Changes are saved to this device. Click <strong style="color:var(--gold);">Save All</strong> to apply.</p>
+          <button class="btn btn-gold" onclick="saveAll()">💾 Save All Changes</button>
+        </div>
+      </div>
+
+      <!-- ── GALLERY TAB ── -->
+      <div class="tab-panel" id="panel-gallery">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">🖼️ Photo Gallery</span>
+            <span style="font-size:0.7rem;color:var(--warm-gray);">Click any image box to upload a photo</span>
+          </div>
+          <div class="card-body">
+            <div class="gallery-editor-grid" id="galleryEditor"></div>
+            <button class="add-image-btn" onclick="addGalleryItem()" style="margin-top:1rem;">
+              + Add New Photo
+            </button>
+          </div>
+        </div>
+
+        <div class="save-bar">
+          <p>⚠️ Images are stored on this device only. For live website, use a hosting service.</p>
+          <button class="btn btn-gold" onclick="saveAll()">💾 Save All Changes</button>
+        </div>
+      </div>
+
+      <!-- ── HERO TAB ── -->
+      <div class="tab-panel" id="panel-hero">
+        <div class="card">
+          <div class="card-header"><span class="card-title">🏠 Hero Section Text</span></div>
+          <div class="card-body">
+            <div class="field">
+              <label>Hero Title (HTML allowed, use &lt;br&gt; for line breaks)</label>
+              <input type="text" id="heroTitle" placeholder="e.g. MAKRANA&lt;br&gt;&lt;span&gt;MARBLE&lt;/span&gt;" />
+            </div>
+            <div class="field">
+              <label>Hero Subtitle / Tagline</label>
+              <input type="text" id="heroSub" placeholder="e.g. The Stone of the Taj Mahal, Now at Your Doorstep" />
+            </div>
+            <div class="field">
+              <label>Small Top Tag (e.g. location / year)</label>
+              <input type="text" id="heroTag" placeholder="e.g. Rajasthan, India · Est. Since Generations" />
+            </div>
+          </div>
+        </div>
+        <div class="save-bar">
+          <p>Tip: Use HTML tags like &lt;span&gt; for gold-colored words.</p>
+          <button class="btn btn-gold" onclick="saveAll()">💾 Save All Changes</button>
+        </div>
+      </div>
+
+      <!-- ── ABOUT TAB ── -->
+      <div class="tab-panel" id="panel-about">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📖 About Section</span></div>
+          <div class="card-body">
+            <div class="field">
+              <label>Section Heading</label>
+              <input type="text" id="aboutHeading" placeholder="e.g. The World's Finest Natural Stone" />
+            </div>
+            <div class="field">
+              <label>Paragraph 1</label>
+              <textarea id="aboutP1" rows="4" placeholder="First paragraph about the shop..."></textarea>
+            </div>
+            <div class="field">
+              <label>Paragraph 2</label>
+              <textarea id="aboutP2" rows="4" placeholder="Second paragraph..."></textarea>
+            </div>
+            <div class="field-row-3">
+              <div class="field">
+                <label>Stat 1 Number</label>
+                <input type="text" id="stat1num" placeholder="50+" />
+              </div>
+              <div class="field">
+                <label>Stat 1 Label</label>
+                <input type="text" id="stat1lbl" placeholder="Varieties" />
+              </div>
+              <div class="field" style="display:none"></div>
+            </div>
+            <div class="field-row-3">
+              <div class="field">
+                <label>Stat 2 Number</label>
+                <input type="text" id="stat2num" placeholder="10K+" />
+              </div>
+              <div class="field">
+                <label>Stat 2 Label</label>
+                <input type="text" id="stat2lbl" placeholder="Projects Done" />
+              </div>
+              <div class="field" style="display:none"></div>
+            </div>
+          </div>
+        </div>
+        <div class="save-bar">
+          <p>Changes will reflect on the live site after Save.</p>
+          <button class="btn btn-gold" onclick="saveAll()">💾 Save All Changes</button>
+        </div>
+      </div>
+
+      <!-- ── CONTACT TAB ── -->
+      <div class="tab-panel" id="panel-contact">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📞 Contact Information</span></div>
+          <div class="card-body">
+            <div class="field-row">
+              <div class="field">
+                <label>Phone Number</label>
+                <input type="text" id="contactPhone" placeholder="+91 76993 83308" />
+              </div>
+              <div class="field">
+                <label>WhatsApp Number (with country code, no spaces)</label>
+                <input type="text" id="contactWA" placeholder="917699383308" />
+              </div>
+            </div>
+            <div class="field">
+              <label>Shop Address</label>
+              <textarea id="contactAddress" rows="3" placeholder="Full address..."></textarea>
+            </div>
+            <div class="field">
+              <label>Google Maps Link</label>
+              <input type="text" id="contactMaps" placeholder="https://maps.app.goo.gl/..." />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label>Business Hours</label>
+                <input type="text" id="contactHours" placeholder="Mon – Sat: 9:00 AM – 7:00 PM" />
+              </div>
+              <div class="field">
+                <label>Email (optional)</label>
+                <input type="text" id="contactEmail" placeholder="info@example.com" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="save-bar">
+          <p>Contact details update the footer and contact section.</p>
+          <button class="btn btn-gold" onclick="saveAll()">💾 Save All Changes</button>
+        </div>
+      </div>
+
+      <!-- ── PASSWORD TAB ── -->
+      <div class="tab-panel" id="panel-password">
+        <div class="card">
+          <div class="card-header"><span class="card-title">🔒 Change Admin Password</span></div>
+          <div class="card-body" style="max-width:400px;">
+            <div class="field">
+              <label>Current Password</label>
+              <input type="password" id="currPass" />
+            </div>
+            <div class="field">
+              <label>New Password</label>
+              <input type="password" id="newPass" />
+            </div>
+            <div class="field">
+              <label>Confirm New Password</label>
+              <input type="password" id="confPass" />
+            </div>
+            <button class="btn btn-gold" onclick="changePassword()">Update Password</button>
+            <p id="passMsg" style="font-size:0.75rem;margin-top:0.8rem;"></p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast">✅ Changes saved successfully!</div>
+
+<script>
+  // ── AUTH ──
+  const DEFAULT_PASS = 'marble2025';
+  function getPass() { return localStorage.getItem('mm_adminPass') || DEFAULT_PASS; }
+  function tryLogin() {
+    const val = document.getElementById('passInput').value;
+    if (val === getPass()) {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('adminApp').style.display = 'block';
+      initAdmin();
+    } else {
+      document.getElementById('loginError').style.display = 'block';
+    }
+  }
+  function logout() {
+    document.getElementById('adminApp').style.display = 'none';
+    document.getElementById('loginScreen').style.display = 'flex';
+    document.getElementById('passInput').value = '';
+    document.getElementById('loginError').style.display = 'none';
+  }
+  function changePassword() {
+    const curr = document.getElementById('currPass').value;
+    const nw   = document.getElementById('newPass').value;
+    const conf = document.getElementById('confPass').value;
+    const msg  = document.getElementById('passMsg');
+    if (curr !== getPass()) { msg.textContent = '❌ Current password incorrect.'; msg.style.color = '#ef5350'; return; }
+    if (nw.length < 6)      { msg.textContent = '❌ Password must be at least 6 characters.'; msg.style.color = '#ef5350'; return; }
+    if (nw !== conf)         { msg.textContent = '❌ Passwords do not match.'; msg.style.color = '#ef5350'; return; }
+    localStorage.setItem('mm_adminPass', nw);
+    msg.textContent = '✅ Password updated successfully!'; msg.style.color = '#4caf50';
+    document.getElementById('currPass').value = '';
+    document.getElementById('newPass').value  = '';
+    document.getElementById('confPass').value = '';
+  }
+
+  // ── TAB SWITCH ──
+  function switchTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    document.getElementById('tab-' + name).classList.add('active');
+  }
+
+  // ── DEFAULT DATA ──
+  const DEFAULT_PRICES = [
+    { name:'Makrana Pure White', usage:'Flooring / Temple',    dot:'#f0ece5', market:85  },
+    { name:'Black Makrana',      usage:'Feature Wall / Decor', dot:'#2c2925', market:120 },
+    { name:'Albeta Marble',      usage:'Kitchen / Bathroom',   dot:'#f0e8d5', market:70  },
+    { name:'Dungri White',       usage:'Flooring / Staircase', dot:'#ddd9d2', market:65  },
+    { name:'Brown Marble',       usage:'Outdoor / Garden',     dot:'#6e5a48', market:75  },
+    { name:'Grey Pearl',         usage:'Modern Interior',      dot:'#d0cbc4', market:80  },
+  ];
+  const DEFAULT_GALLERY = [
+    { src:'', caption:'Makrana White Flooring', wide:true },
+    { src:'', caption:'Temple Installation',    wide:false },
+    { src:'', caption:'Kitchen Countertop',     wide:false },
+    { src:'', caption:'Exterior Facade',        wide:false },
+    { src:'', caption:'Custom Staircase',       wide:false },
+    { src:'', caption:'Black Marble Feature',   wide:false },
+    { src:'', caption:'Our Showroom',           wide:true },
+    { src:'', caption:'Stone Yard',             wide:false },
+  ];
+
+  // ── INIT ──
+  function initAdmin() {
+    loadPriceEditor();
+    loadGalleryEditor();
+    loadTextFields();
+  }
+
+  // ── PRICE EDITOR ──
+  let prices = [];
+  function loadPriceEditor() {
+    prices = JSON.parse(localStorage.getItem('mm_prices')) || DEFAULT_PRICES.map(p => ({...p, ours: Math.round(p.market * 0.9)}));
+    renderPriceRows();
+  }
+  function renderPriceRows() {
+    const container = document.getElementById('priceRows');
+    container.innerHTML = prices.map((p, i) => `
+      <div class="price-editor-row" id="prow-${i}">
+        <input class="price-input" value="${p.name}" placeholder="Marble name"
+               oninput="prices[${i}].name=this.value" />
+        <input class="price-input" value="${p.usage}" placeholder="Usage"
+               oninput="prices[${i}].usage=this.value" />
+        <div style="position:relative;">
+          <input class="price-input" type="number" value="${p.market}" placeholder="₹ Market"
+                 oninput="prices[${i}].market=+this.value; autoOurs(${i})" style="padding-left:1.8rem;" />
+          <span style="position:absolute;left:0.7rem;top:50%;transform:translateY(-50%);color:var(--warm-gray);font-size:0.85rem;">₹</span>
+        </div>
+        <div style="position:relative;">
+          <input class="price-input" type="number" value="${p.ours}" placeholder="₹ Ours"
+                 oninput="prices[${i}].ours=+this.value" id="ours-${i}" style="padding-left:1.8rem;" />
+          <span style="position:absolute;left:0.7rem;top:50%;transform:translateY(-50%);color:var(--warm-gray);font-size:0.85rem;">₹</span>
+        </div>
+        <button class="btn btn-red" onclick="removePrice(${i})">✕</button>
+      </div>`).join('');
+  }
+  function autoOurs(i) {
+    prices[i].ours = Math.round(prices[i].market * 0.9);
+    const el = document.getElementById('ours-' + i);
+    if (el) el.value = prices[i].ours;
+  }
+  function addPriceRow() {
+    prices.push({ name:'New Marble Type', usage:'General Purpose', dot:'#cccccc', market:60, ours:54 });
+    renderPriceRows();
+  }
+  function removePrice(i) {
+    if (prices.length <= 1) { showToast('⚠️ Keep at least 1 row!'); return; }
+    prices.splice(i, 1);
+    renderPriceRows();
+  }
+
+  // ── GALLERY EDITOR ──
+  let gallery = [];
+  function loadGalleryEditor() {
+    gallery = JSON.parse(localStorage.getItem('mm_gallery')) || DEFAULT_GALLERY;
+    renderGalleryEditor();
+  }
+  function renderGalleryEditor() {
+    const container = document.getElementById('galleryEditor');
+    container.innerHTML = gallery.map((item, i) => `
+      <div class="gallery-card" id="gcard-${i}">
+        <button class="remove-btn" onclick="removeGallery(${i})">✕</button>
+        <div class="gallery-preview" onclick="triggerImgUpload(${i})">
+          ${item.src
+            ? `<img src="${item.src}" alt="${item.caption}" />`
+            : `<div class="upload-hint"><span>📷</span><span>Click to upload</span></div>`
+          }
+        </div>
+        <input type="file" accept="image/*" class="img-file-input" id="imgfile-${i}"
+               onchange="handleImageUpload(${i}, this)" />
+        <input class="caption-input" type="text" value="${item.caption}" placeholder="Caption..."
+               oninput="gallery[${i}].caption=this.value" />
+        <label class="wide-toggle">
+          <input type="checkbox" ${item.wide ? 'checked' : ''} onchange="gallery[${i}].wide=this.checked" />
+          Wide (spans 2 columns)
+        </label>
+      </div>`).join('');
+  }
+  function triggerImgUpload(i) {
+    document.getElementById('imgfile-' + i).click();
+  }
+  function handleImageUpload(i, input) {
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      gallery[i].src = e.target.result;
+      renderGalleryEditor();
+    };
+    reader.readAsDataURL(file);
+  }
+  function addGalleryItem() {
+    gallery.push({ src:'', caption:'New Photo', wide:false });
+    renderGalleryEditor();
+  }
+  function removeGallery(i) {
+    gallery.splice(i, 1);
+    renderGalleryEditor();
+  }
+
+  // ── TEXT FIELDS ──
+  function loadTextFields() {
+    document.getElementById('heroTitle').value   = localStorage.getItem('mm_heroTitle')   || '';
+    document.getElementById('heroSub').value     = localStorage.getItem('mm_heroSub')     || '';
+    document.getElementById('heroTag').value     = localStorage.getItem('mm_heroTag')     || '';
+    document.getElementById('aboutHeading').value= localStorage.getItem('mm_aboutHeading')|| '';
+    document.getElementById('aboutP1').value     = localStorage.getItem('mm_aboutP1')     || '';
+    document.getElementById('aboutP2').value     = localStorage.getItem('mm_aboutP2')     || '';
+    document.getElementById('stat1num').value    = localStorage.getItem('mm_stat1num')    || '';
+    document.getElementById('stat1lbl').value    = localStorage.getItem('mm_stat1lbl')    || '';
+    document.getElementById('stat2num').value    = localStorage.getItem('mm_stat2num')    || '';
+    document.getElementById('stat2lbl').value    = localStorage.getItem('mm_stat2lbl')    || '';
+    document.getElementById('contactPhone').value  = localStorage.getItem('mm_contactPhone')  || '+91 76993 83308';
+    document.getElementById('contactWA').value     = localStorage.getItem('mm_contactWA')     || '917699383308';
+    document.getElementById('contactAddress').value= localStorage.getItem('mm_contactAddress')|| 'Sherpur to Rampurhat Road, Sherpur, Khargram, Brahmapur, West Bengal – 742159';
+    document.getElementById('contactMaps').value   = localStorage.getItem('mm_contactMaps')   || 'https://maps.app.goo.gl/971e4G3c7Pf1ugiN8';
+    document.getElementById('contactHours').value  = localStorage.getItem('mm_contactHours')  || 'Mon – Sat: 9:00 AM – 7:00 PM';
+    document.getElementById('contactEmail').value  = localStorage.getItem('mm_contactEmail')  || '';
+  }
+
+  // ── SAVE ALL ──
+  function saveAll() {
+    // Prices — add dot color back (keep existing or default grey)
+    const toSave = prices.map(p => ({
+      ...p,
+      dot: p.dot || '#cccccc',
+      ours: p.ours || Math.round(p.market * 0.9)
+    }));
+    localStorage.setItem('mm_prices',  JSON.stringify(toSave));
+    localStorage.setItem('mm_gallery', JSON.stringify(gallery));
+    localStorage.setItem('mm_updated', new Date().toLocaleDateString('en-IN'));
+
+    // Text
+    ['heroTitle','heroSub','heroTag','aboutHeading','aboutP1','aboutP2',
+     'stat1num','stat1lbl','stat2num','stat2lbl',
+     'contactPhone','contactWA','contactAddress','contactMaps','contactHours','contactEmail'
+    ].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) localStorage.setItem('mm_' + id, el.value);
+    });
+
+    showToast('✅ All changes saved!');
+  }
+
+  // ── TOAST ──
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  // ── KEYBOARD SHORTCUT ──
+  document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+      e.preventDefault();
+      if (document.getElementById('adminApp').style.display !== 'none') saveAll();
+    }
+  });
+</script>
+</body>
+</html>

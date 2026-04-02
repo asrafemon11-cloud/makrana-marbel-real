@@ -1,0 +1,2530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Makrana Marble — Authentic Rajasthan marble direct from source. Best prices on Makrana Pure White, Black Marble, Albeta, Dungri, Grey Pearl & more. Shop in Sahi Sherpur, Murshidabad, West Bengal. Call +91 76993 83308." />
+<meta name="keywords" content="Makrana marble, marble shop, Sherpur marble, Murshidabad marble, Rajasthan marble, Taj Mahal marble, white marble, black marble, flooring tiles, West Bengal" />
+<meta property="og:title" content="Makrana Marble — Since Generations" />
+<meta property="og:description" content="Authentic Makrana marble direct from Rajasthan. 10% cheaper than market. Flooring, temple, countertops — all India delivery." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="images/marble-014.jpg" />
+<meta name="theme-color" content="#1a1816" />
+<title>Makrana Marble — Since Generations</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ivory: #f8f5f0;
+    --cream: #ede9e1;
+    --stone: #cfc8bc;
+    --warm-gray: #9e9690;
+    --charcoal: #2c2a27;
+    --deep: #1a1816;
+    --gold: #b8945a;
+    --gold-light: #d4af7a;
+    --gold-pale: #f0e4cc;
+    --white: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--deep);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── MARBLE TEXTURE SVG OVERLAY ── */
+  .marble-bg {
+    background-color: var(--ivory);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='800' height='800' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 400px 400px;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: transparent;
+    transition: background 0.5s, padding 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(26, 24, 22, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 1rem 4rem;
+    border-bottom: 1px solid rgba(184,148,90,0.2);
+  }
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248,245,240,0.75);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.6rem 1.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--deep); }
+
+  /* ── HERO ── */
+  #hero {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--deep);
+  }
+
+  .hero-marble {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 60%, rgba(207,200,188,0.12) 0%, transparent 70%),
+      linear-gradient(160deg, rgba(26,24,22,1) 0%, rgba(44,42,39,0.85) 50%, rgba(26,24,22,1) 100%);
+    animation: shimmer 8s ease-in-out infinite alternate;
+  }
+  @keyframes shimmer {
+    0% { opacity: 1; }
+    100% { opacity: 0.85; }
+  }
+
+  /* Veins */
+  .vein {
+    position: absolute;
+    background: linear-gradient(to right, transparent, rgba(207,200,188,0.06), transparent);
+    transform-origin: center;
+    pointer-events: none;
+  }
+  .vein-1 { width: 120%; height: 1px; top: 28%; left: -10%; transform: rotate(-8deg); }
+  .vein-2 { width: 90%; height: 1px; top: 55%; left: 5%; transform: rotate(4deg); }
+  .vein-3 { width: 80%; height: 1px; top: 72%; left: 15%; transform: rotate(-12deg); }
+  .vein-4 { width: 60%; height: 1px; top: 40%; left: 30%; transform: rotate(20deg); }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.8rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ivory);
+    margin-bottom: 0.3rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.6s forwards;
+  }
+
+  .hero-title span {
+    color: var(--gold-light);
+    font-style: normal;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--stone);
+    margin-top: 1rem;
+    margin-bottom: 2.8rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.9s forwards;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s 1.2s forwards;
+  }
+
+  .btn-primary {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--deep);
+    padding: 1rem 2.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid rgba(248,245,240,0.35);
+    color: var(--ivory);
+    padding: 1rem 2.4rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 1s 2s forwards;
+  }
+  .hero-scroll span {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 7rem 4rem; }
+
+  .section-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--charcoal);
+    margin-bottom: 1.2rem;
+  }
+
+  .section-title.light { color: var(--ivory); }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.5rem 0;
+  }
+  .divider.center { margin: 1.5rem auto; }
+
+  /* ── MARQUEE STRIP ── */
+  .marquee-strip {
+    background: var(--gold);
+    padding: 0.9rem 0;
+    overflow: hidden;
+    display: flex;
+  }
+  .marquee-inner {
+    display: flex;
+    gap: 0;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-inner span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--deep);
+    padding: 0 2.5rem;
+  }
+  .marquee-inner span::after {
+    content: '◆';
+    margin-left: 2.5rem;
+    opacity: 0.5;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--ivory);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 7rem 4rem;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-frame {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #e8e3da 0%, #d4cfc7 40%, #bfb9af 70%, #ccc7be 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Faux marble tile pattern */
+  .about-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(90deg, transparent, transparent 49%, rgba(255,255,255,0.3) 49%, rgba(255,255,255,0.3) 51%, transparent 51%),
+      repeating-linear-gradient(0deg, transparent, transparent 49%, rgba(255,255,255,0.3) 49%, rgba(255,255,255,0.3) 51%, transparent 51%);
+    background-size: 60px 60px;
+    opacity: 0.4;
+  }
+
+  .about-img-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 70%, rgba(180,170,160,0.3) 0%, transparent 50%);
+  }
+
+  .marble-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: -0.05em;
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 100px;
+    height: 100px;
+    background: var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+  .about-badge .num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--deep);
+    line-height: 1;
+  }
+  .about-badge .lbl {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--deep);
+    text-align: center;
+    line-height: 1.3;
+    margin-top: 0.2rem;
+  }
+
+  .about-frame-border {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: -1.5rem;
+    bottom: -1.5rem;
+    border: 1px solid var(--stone);
+    z-index: 0;
+  }
+
+  .about-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: #5a5650;
+    margin-bottom: 1.4rem;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--stone);
+  }
+  .stat-item .stat-num {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-item .stat-lbl {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 0.3rem;
+  }
+
+  /* ── PRODUCTS ── */
+  #products {
+    background: var(--deep);
+    padding: 7rem 4rem;
+  }
+
+  .products-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--charcoal);
+  }
+
+  .product-card {
+    background: var(--deep);
+    aspect-ratio: 3/4;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    group: true;
+  }
+
+  .product-swatch {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .product-card:hover .product-swatch { transform: scale(1.06); }
+
+  /* Individual marble swatches */
+  .swatch-1 {
+    background: linear-gradient(135deg,
+      #f0ece5 0%, #e8e3da 20%,
+      #d8d3c8 35%, #ede9e1 50%,
+      #f4f0eb 65%, #ddd8cf 80%, #f0ece5 100%);
+  }
+  .swatch-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent, transparent 80px,
+        rgba(200,195,185,0.15) 80px, rgba(200,195,185,0.15) 82px
+      );
+  }
+
+  .swatch-2 {
+    background: linear-gradient(160deg,
+      #1a1815 0%, #2c2925 20%,
+      #3d3833 35%, #252220 50%,
+      #1e1b18 65%, #312e29 80%, #1a1815 100%);
+  }
+  .swatch-2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        30deg,
+        transparent, transparent 60px,
+        rgba(180,165,140,0.08) 60px, rgba(180,165,140,0.08) 62px
+      );
+  }
+
+  .swatch-3 {
+    background: linear-gradient(120deg,
+      #f9f3e8 0%, #f0e8d5 25%,
+      #e8dcc5 45%, #f5edd8 60%,
+      #eddfc8 75%, #f2e9d2 100%);
+  }
+
+  .swatch-4 {
+    background: linear-gradient(150deg,
+      #e8e3da 0%, #d4cfc7 25%,
+      #c8c3ba 40%, #dcd7ce 60%,
+      #e2ddd4 80%, #d0ccc3 100%);
+  }
+  .swatch-4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 120% 80% at 40% 30%, rgba(255,255,255,0.2) 0%, transparent 60%);
+  }
+
+  .swatch-5 {
+    background: linear-gradient(140deg,
+      #5c4a3a 0%, #6e5a48 20%,
+      #7d6a56 35%, #5a4838 50%,
+      #4e3e30 65%, #6a5845 80%, #5c4a3a 100%);
+  }
+
+  .swatch-6 {
+    background: linear-gradient(130deg,
+      #e2ded8 0%, #d5d1ca 20%,
+      #cac5be 35%, #ddd9d2 55%,
+      #e0dbd4 70%, #d0cbc4 100%);
+  }
+  .swatch-6::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 60% 40%, rgba(255,255,255,0.15) 0%, transparent 40%),
+      repeating-linear-gradient(
+        -30deg, transparent, transparent 100px,
+        rgba(150,145,138,0.08) 100px, rgba(150,145,138,0.08) 101px
+      );
+  }
+
+  .product-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26,24,22,0.85) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .product-card:hover .product-overlay { opacity: 1; }
+
+  .product-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.8rem;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s;
+  }
+  .product-card:hover .product-info { transform: translateY(0); opacity: 1; }
+
+  .product-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--ivory);
+    margin-bottom: 0.3rem;
+  }
+  .product-desc {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--stone);
+    text-transform: uppercase;
+  }
+
+  .product-label {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: rgba(26,24,22,0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(184,148,90,0.3);
+    padding: 0.4rem 0.9rem;
+  }
+  .product-label span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* ── WHY MAKRANA ── */
+  #why {
+    background: var(--cream);
+    padding: 7rem 4rem;
+  }
+  .why-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .why-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-top: 2px solid var(--gold);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  }
+  .why-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  .why-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: var(--charcoal);
+    margin-bottom: 0.8rem;
+  }
+  .why-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--warm-gray);
+  }
+
+  /* ── HERITAGE BANNER ── */
+  #heritage {
+    background: var(--charcoal);
+    padding: 8rem 4rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  #heritage::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(184,148,90,0.08) 0%, transparent 70%);
+  }
+  .heritage-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .heritage-quote::before {
+    content: '"';
+    font-size: 6rem;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 0;
+    vertical-align: -2rem;
+    margin-right: 0.2rem;
+  }
+  .heritage-attr {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── PROCESS ── */
+  #process {
+    background: var(--ivory);
+    padding: 7rem 4rem;
+  }
+  .process-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2.2rem;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--stone), transparent);
+  }
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+  }
+  .step-circle {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--stone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+  }
+  .process-step:hover .step-circle {
+    background: var(--gold);
+    border-color: var(--gold);
+    transform: scale(1.1);
+  }
+  .step-num {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.3rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background: var(--gold);
+    color: var(--deep);
+    border-radius: 50%;
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+  .step-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  /* ── SEARCH & FILTER ── */
+  #search-section {
+    background: var(--charcoal);
+    padding: 0;
+    position: sticky;
+    top: 57px;
+    z-index: 90;
+    border-bottom: 1px solid rgba(184,148,90,0.15);
+    transition: box-shadow 0.3s;
+  }
+  #search-section.shadowed { box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+
+  .search-bar-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .search-icon-wrap {
+    display: flex;
+    align-items: center;
+    padding: 0 1.2rem;
+    background: rgba(184,148,90,0.1);
+    border-right: 1px solid rgba(184,148,90,0.2);
+    flex-shrink: 0;
+  }
+  .search-icon-wrap svg { width:18px; height:18px; fill:none; stroke:var(--gold); stroke-width:2; }
+
+  #mainSearch {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--ivory);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    padding: 1.1rem 1.2rem;
+    letter-spacing: 0.05em;
+  }
+  #mainSearch::placeholder { color: rgba(207,200,188,0.35); }
+
+  .search-divider { width:1px; background:rgba(207,200,188,0.1); flex-shrink:0; }
+
+  .filter-chips {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-shrink: 0;
+  }
+  .filter-chips::-webkit-scrollbar { display:none; }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-right: 1px solid rgba(207,200,188,0.1);
+    padding: 0 0.8rem;
+    position: relative;
+  }
+  .filter-group:last-child { border-right: none; }
+
+  .filter-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    white-space: nowrap;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .chip-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: rgba(207,200,188,0.55);
+    background: transparent;
+    border: none;
+    padding: 0.4rem 0.7rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s;
+    border-radius: 2px;
+  }
+  .chip-btn:hover { color: var(--ivory); }
+  .chip-btn.active {
+    color: var(--deep);
+    background: var(--gold);
+    font-weight: 500;
+  }
+
+  .search-results-bar {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(207,200,188,0.07);
+  }
+  .results-count {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--warm-gray);
+  }
+  .results-count strong { color: var(--gold); }
+  .clear-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    transition: color 0.2s;
+    display: none;
+  }
+  .clear-btn:hover { color: var(--gold); }
+  .clear-btn.visible { display: block; }
+
+  /* Product card hidden state */
+  .product-card { transition: opacity 0.3s, transform 0.3s; }
+  .product-card.hidden { opacity:0; pointer-events:none; position:absolute; }
+  .products-grid { position:relative; }
+
+  /* No results */
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    display: none;
+  }
+  .no-results.show { display: block; }
+  .no-results h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--stone);
+    margin-bottom: 0.8rem;
+  }
+  .no-results p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--warm-gray);
+  }
+
+  /* Price range slider */
+  .price-range-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .price-range-wrap input[type=range] {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(to right, var(--gold) 0%, var(--gold) var(--fill, 50%), rgba(207,200,188,0.2) var(--fill, 50%));
+    outline: none;
+    cursor: pointer;
+  }
+  .price-range-wrap input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .price-val {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    color: var(--gold-light);
+    white-space: nowrap;
+    min-width: 50px;
+  }
+
+  /* Sort dropdown */
+  .sort-select {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--stone);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    padding: 0.4rem 0.3rem;
+  }
+  .sort-select option { background: var(--charcoal); color: var(--ivory); }
+
+  /* Mobile search */
+  @media (max-width: 900px) {
+    .search-bar-wrap { padding: 0 1rem; flex-wrap: wrap; }
+    .filter-chips { flex-wrap: wrap; padding: 0.5rem 0; gap: 0.3rem; }
+    .filter-group { border-right: none; padding: 0 0.3rem; flex-wrap: wrap; }
+    .search-results-bar { padding: 0.5rem 1rem; }
+    #search-section { top: 53px; }
+    .price-range-wrap input[type=range] { width: 60px; }
+  }
+  @media (max-width: 600px) {
+    .search-bar-wrap { padding: 0 0.5rem; }
+    .filter-label { display: none; }
+  }
+
+  /* ── PRICING ── */
+  #pricing { background: var(--cream); padding: 7rem 4rem; }
+  .pricing-inner { max-width: 1100px; margin: 0 auto; }
+  .pricing-note {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: #e8f5e9; border: 1px solid #a5d6a7;
+    padding: 0.6rem 1.2rem; margin-bottom: 2.5rem; margin-top: 1rem;
+  }
+  .pricing-note span { font-family:'Jost',sans-serif; font-size:0.75rem; letter-spacing:0.08em; color:#2e7d32; }
+  .price-table { width:100%; border-collapse:collapse; background:var(--white); box-shadow:0 4px 40px rgba(0,0,0,0.07); }
+  .price-table thead tr { background:var(--charcoal); }
+  .price-table thead th {
+    font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;
+    color:var(--gold-light); padding:1.2rem 1.5rem; text-align:left; border:none; white-space:nowrap;
+  }
+  .price-table thead th:last-child { text-align:center; }
+  .price-table tbody tr { border-bottom:1px solid var(--cream); transition:background 0.2s; }
+  .price-table tbody tr:hover { background:#faf8f4; }
+  .price-table tbody tr:last-child { border-bottom:none; }
+  .price-table td { padding:1.1rem 1.5rem; font-family:'Jost',sans-serif; font-size:0.88rem; color:var(--charcoal); vertical-align:middle; }
+  .td-marble { font-weight:500; }
+  .swatch-dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:0.6rem; vertical-align:middle; border:1px solid rgba(0,0,0,0.1); }
+  .market-price { color:#c0392b; font-weight:400; text-decoration:line-through; }
+  .our-price { color:#1b5e20; font-weight:600; font-size:1rem; }
+  .save-badge {
+    display:inline-block; background:var(--gold); color:var(--deep);
+    font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.1em; padding:0.35rem 0.8rem; font-weight:600;
+  }
+  .price-footer {
+    display:flex; align-items:center; justify-content:space-between;
+    margin-top:1.5rem; padding:1.2rem 1.5rem; background:var(--deep); flex-wrap:wrap; gap:1rem;
+  }
+  .price-footer p { font-family:'Jost',sans-serif; font-size:0.72rem; letter-spacing:0.08em; color:var(--stone); }
+  .price-footer p strong { color:var(--gold); font-weight:400; }
+
+  /* ── GALLERY ── */
+  #gallery { background:var(--deep); padding:7rem 4rem; }
+  .gallery-inner { max-width:1200px; margin:0 auto; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:3rem; }
+  .gallery-grid .g-wide { grid-column:span 2; }
+  .gallery-item {
+    overflow:hidden; background:var(--charcoal); position:relative; cursor:pointer;
+    aspect-ratio:1; min-height:180px;
+  }
+  .gallery-item.g-wide { aspect-ratio:2/1; }
+  .gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); display:block; }
+  .gallery-item:hover img { transform:scale(1.07); }
+  .gallery-placeholder { width:100%; height:100%; min-height:180px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem; }
+  .gallery-placeholder span:first-child { font-size:2rem; opacity:0.3; }
+  .gallery-placeholder span:last-child { font-family:'Jost',sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--warm-gray); opacity:0.5; }
+  .gallery-item .img-overlay {
+    position:absolute; inset:0; background:linear-gradient(to top,rgba(26,24,22,0.7) 0%,transparent 50%);
+    opacity:0; transition:opacity 0.3s; display:flex; align-items:flex-end; padding:1.2rem;
+  }
+  .gallery-item:hover .img-overlay { opacity:1; }
+  .img-caption { font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em; color:var(--ivory); }
+  @media(max-width:900px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} .gallery-grid .g-wide{grid-column:span 2;} #pricing,#gallery{padding:5rem 2rem;} }
+  @media(max-width:600px){ .price-table thead th,.price-table td{padding:0.8rem 0.6rem;font-size:0.75rem;} }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--deep);
+    padding: 7rem 4rem;
+  }
+  .contact-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .contact-info p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--stone);
+    margin-bottom: 2.5rem;
+  }
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .detail-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .detail-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .detail-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.85rem;
+    color: var(--stone);
+    line-height: 1.6;
+  }
+  .detail-text strong {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-field label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(207,200,188,0.2);
+    color: var(--ivory);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+  }
+
+  .form-field select option { background: var(--deep); }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .btn-submit {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--deep);
+    border: none;
+    padding: 1.1rem 2.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    align-self: flex-start;
+  }
+  .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0f0e0c;
+    padding: 3rem 4rem;
+    border-top: 1px solid rgba(184,148,90,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    color: var(--gold-light);
+  }
+  .footer-logo span {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-top: 0.2rem;
+  }
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .footer-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.65rem;
+    color: rgba(158,150,144,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── AI ASSISTANT ── */
+  #aiBtn {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 2rem;
+    z-index: 200;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--charcoal), #1a1816);
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(184,148,90,0.25);
+    transition: all 0.3s;
+    font-size: 1.4rem;
+  }
+  #aiBtn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(184,148,90,0.4); background: var(--gold); }
+  #aiBtn.open { background: var(--gold); border-color: var(--gold-light); }
+
+  #aiPanel {
+    position: fixed;
+    bottom: 9.5rem;
+    right: 2rem;
+    z-index: 199;
+    width: 380px;
+    max-height: 560px;
+    background: var(--deep);
+    border: 1px solid rgba(184,148,90,0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.85) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    transform-origin: bottom right;
+  }
+  #aiPanel.open {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .ai-header {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid rgba(184,148,90,0.15);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-shrink: 0;
+  }
+  .ai-avatar {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .ai-header-text { flex: 1; }
+  .ai-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-light);
+  }
+  .ai-status {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--warm-gray);
+    margin-top: 0.1rem;
+  }
+  .ai-status.thinking { color: var(--gold); }
+  .ai-close {
+    background: none; border: none; color: var(--warm-gray);
+    cursor: pointer; font-size: 1.1rem; padding: 0.2rem; transition: color 0.2s;
+  }
+  .ai-close:hover { color: var(--ivory); }
+
+  .ai-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(184,148,90,0.2) transparent;
+  }
+  .ai-messages::-webkit-scrollbar { width: 4px; }
+  .ai-messages::-webkit-scrollbar-thumb { background: rgba(184,148,90,0.2); border-radius: 2px; }
+
+  .msg {
+    max-width: 90%;
+    padding: 0.7rem 1rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    animation: msgIn 0.3s ease;
+  }
+  @keyframes msgIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+  .msg.bot {
+    background: rgba(207,200,188,0.07);
+    border: 1px solid rgba(184,148,90,0.12);
+    border-radius: 2px 12px 12px 12px;
+    color: var(--ivory);
+    align-self: flex-start;
+  }
+  .msg.user {
+    background: var(--gold);
+    color: var(--deep);
+    border-radius: 12px 2px 12px 12px;
+    align-self: flex-end;
+    font-weight: 500;
+  }
+  .msg.typing {
+    background: rgba(207,200,188,0.07);
+    border: 1px solid rgba(184,148,90,0.12);
+    border-radius: 2px 12px 12px 12px;
+    align-self: flex-start;
+    padding: 0.9rem 1.2rem;
+  }
+  .typing-dots { display: flex; gap: 4px; align-items: center; }
+  .typing-dots span {
+    width: 6px; height: 6px; background: var(--gold);
+    border-radius: 50%; animation: dot 1.2s ease-in-out infinite;
+  }
+  .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes dot { 0%,60%,100% { transform:translateY(0); opacity:0.4; } 30% { transform:translateY(-6px); opacity:1; } }
+
+  .ai-suggestions {
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(184,148,90,0.1);
+    flex-shrink: 0;
+  }
+  .sug-btn {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    background: rgba(184,148,90,0.1);
+    border: 1px solid rgba(184,148,90,0.25);
+    color: var(--gold);
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .sug-btn:hover { background: var(--gold); color: var(--deep); }
+
+  .ai-input-row {
+    padding: 0.8rem 1rem;
+    border-top: 1px solid rgba(184,148,90,0.15);
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  #aiInput {
+    flex: 1;
+    background: rgba(207,200,188,0.06);
+    border: 1px solid rgba(184,148,90,0.2);
+    color: var(--ivory);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.83rem;
+    padding: 0.6rem 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 4px;
+  }
+  #aiInput:focus { border-color: var(--gold); }
+  #aiInput::placeholder { color: rgba(207,200,188,0.3); }
+  #aiSend {
+    width: 36px; height: 36px;
+    background: var(--gold); border: none; border-radius: 4px;
+    cursor: pointer; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; flex-shrink: 0;
+  }
+  #aiSend:hover { background: var(--gold-light); transform: scale(1.05); }
+  #aiSend:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  .ai-powered {
+    text-align: center;
+    padding: 0.3rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    color: rgba(158,150,144,0.4);
+    text-transform: uppercase;
+    border-top: 1px solid rgba(184,148,90,0.07);
+    flex-shrink: 0;
+  }
+
+  /* product highlight from AI */
+  .product-card.ai-highlight {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    animation: aiPulse 1.5s ease;
+  }
+  @keyframes aiPulse {
+    0%,100% { outline-color: var(--gold); }
+    50% { outline-color: var(--gold-light); box-shadow: 0 0 20px rgba(184,148,90,0.4); }
+  }
+
+  @media (max-width: 600px) {
+    #aiPanel { right: 0.5rem; left: 0.5rem; width: auto; bottom: 8rem; }
+    #aiBtn { right: 1rem; bottom: 5rem; }
+  }
+
+  /* ── FLOATING WA ── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 200;
+    width: 56px;
+    height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: pulse-wa 2s ease-in-out infinite;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+    animation: none;
+  }
+  .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 4px 35px rgba(37,211,102,0.6); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    nav.scrolled { padding: 0.9rem 2rem; }
+    .nav-links { display: none; }
+    #about { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 2rem; }
+    .about-badge { right: 0; }
+    section { padding: 5rem 2rem; }
+    #products { padding: 5rem 2rem; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .process-steps::before { display: none; }
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    footer { flex-direction: column; text-align: center; padding: 2.5rem 2rem; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+    #contact { padding: 5rem 2rem; }
+    #heritage { padding: 5rem 2rem; }
+  }
+
+  @media (max-width: 600px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .stat-row { gap: 2rem; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    #about { padding: 4rem 1.2rem; gap: 3rem; }
+    .price-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">MAKRANA MARBLE</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Collection</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-marble"></div>
+  <div class="vein vein-1"></div>
+  <div class="vein vein-2"></div>
+  <div class="vein vein-3"></div>
+  <div class="vein vein-4"></div>
+
+  <div class="hero-content">
+    <p class="hero-tag">Rajasthan, India · Est. Since Generations</p>
+    <h1 class="hero-title">MAKRANA<br><span>MARBLE</span></h1>
+    <p class="hero-subtitle">The Stone of the Taj Mahal, Now at Your Doorstep</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">Explore Collection</a>
+      <a href="#contact" class="btn-outline">Request Sample</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span>Makrana White</span>
+    <span>Dungri Marble</span>
+    <span>Albeta Marble</span>
+    <span>Pink Marble</span>
+    <span>Flooring</span>
+    <span>Countertops</span>
+    <span>Monuments</span>
+    <span>Custom Cutting</span>
+    <span>Bulk Supply</span>
+    <span>Makrana White</span>
+    <span>Dungri Marble</span>
+    <span>Albeta Marble</span>
+    <span>Pink Marble</span>
+    <span>Flooring</span>
+    <span>Countertops</span>
+    <span>Monuments</span>
+    <span>Custom Cutting</span>
+    <span>Bulk Supply</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section style="background:var(--ivory); padding:0;">
+<div id="about">
+  <div class="about-visual reveal">
+    <div class="about-frame-border"></div>
+    <div class="about-img-frame" style="background:none;overflow:hidden;">
+      <img src="images/owner.jpg" alt="Shop Owner — Makrana Marble"
+           style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+    </div>
+    <div class="about-badge">
+      <span class="num">25+</span>
+      <span class="lbl">Years of<br>Excellence</span>
+    </div>
+  </div>
+
+  <div class="about-text">
+    <p class="section-label reveal">Our Story</p>
+    <h2 class="section-title reveal">The World's Finest<br>Natural Stone</h2>
+    <div class="divider reveal"></div>
+    <p class="reveal">Makrana marble is not merely stone — it is history carved from the earth. Quarried from the mines of Makrana, Rajasthan, this pure white calcite marble has adorned the Taj Mahal, the Victoria Memorial, and countless temples and palaces across India for over five centuries.</p>
+    <p class="reveal">Our shop brings this legendary stone directly from the quarries to your home, temple, or commercial project. We offer authentic Makrana marble with full traceability — from mine to marble slab.</p>
+
+    <div class="stat-row reveal">
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-lbl">Varieties</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10K+</div>
+        <div class="stat-lbl">Projects Done</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">All India</div>
+        <div class="stat-lbl">Delivery</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SEARCH & FILTER BAR -->
+<div id="search-section">
+  <div class="search-bar-wrap">
+    <div class="search-icon-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+    </div>
+    <input type="text" id="mainSearch" placeholder="Search marble by name, usage, colour…" oninput="applyFilters()" />
+    <div class="search-divider"></div>
+
+    <div class="filter-chips">
+      <!-- Usage Filter -->
+      <div class="filter-group">
+        <span class="filter-label">Use</span>
+        <button class="chip-btn active" data-filter="usage" data-value="all" onclick="setFilter('usage','all',this)">All</button>
+        <button class="chip-btn" data-filter="usage" data-value="flooring" onclick="setFilter('usage','flooring',this)">Flooring</button>
+        <button class="chip-btn" data-filter="usage" data-value="kitchen" onclick="setFilter('usage','kitchen',this)">Kitchen</button>
+        <button class="chip-btn" data-filter="usage" data-value="temple" onclick="setFilter('usage','temple',this)">Temple</button>
+        <button class="chip-btn" data-filter="usage" data-value="outdoor" onclick="setFilter('usage','outdoor',this)">Outdoor</button>
+        <button class="chip-btn" data-filter="usage" data-value="wall" onclick="setFilter('usage','wall',this)">Wall</button>
+      </div>
+
+      <!-- Tone Filter -->
+      <div class="filter-group">
+        <span class="filter-label">Tone</span>
+        <button class="chip-btn active" data-filter="tone" data-value="all" onclick="setFilter('tone','all',this)">All</button>
+        <button class="chip-btn" data-filter="tone" data-value="white" onclick="setFilter('tone','white',this)">⬜ White</button>
+        <button class="chip-btn" data-filter="tone" data-value="dark" onclick="setFilter('tone','dark',this)">⬛ Dark</button>
+        <button class="chip-btn" data-filter="tone" data-value="warm" onclick="setFilter('tone','warm',this)">🟫 Warm</button>
+        <button class="chip-btn" data-filter="tone" data-value="grey" onclick="setFilter('tone','grey',this)">🔲 Grey</button>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-group">
+        <span class="filter-label">Max ₹</span>
+        <div class="price-range-wrap">
+          <input type="range" id="priceRange" min="50" max="150" value="150" step="5"
+                 oninput="updatePriceFilter(this)" />
+          <span class="price-val" id="priceVal">Any</span>
+        </div>
+      </div>
+
+      <!-- Sort -->
+      <div class="filter-group">
+        <span class="filter-label">Sort</span>
+        <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+          <option value="default">Default</option>
+          <option value="price-asc">Price ↑</option>
+          <option value="price-desc">Price ↓</option>
+          <option value="name-az">Name A–Z</option>
+          <option value="savings">Best Savings</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-results-bar">
+    <span class="results-count" id="resultsCount"></span>
+    <button class="clear-btn" id="clearBtn" onclick="clearAllFilters()">✕ Clear Filters</button>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header">
+    <p class="section-label reveal" style="color:var(--gold);">Our Collection</p>
+    <h2 class="section-title light reveal">Marble Varieties</h2>
+    <div class="divider center reveal"></div>
+  </div>
+
+  <div class="products-grid reveal" id="productsGrid">
+    <div class="product-card" data-name="makrana pure white" data-usage="flooring temple staircase" data-tone="white" data-price="76" data-market="85">
+      <div class="product-swatch swatch-1" style="background-image:url('images/marble-014.jpg');background-size:cover;background-position:center;"></div>
+      <div class="product-label"><span>Premium</span></div>
+      <div class="product-overlay"></div>
+      <div class="product-info">
+        <div class="product-name">Makrana Pure White</div>
+        <div class="product-desc">Classic · Taj-Grade</div>
+      </div>
+    </div>
+    <div class="product-card" data-name="black makrana" data-usage="wall feature decor interior" data-tone="dark" data-price="108" data-market="120">
+      <div class="product-swatch swatch-2" style="background-image:url('images/marble-001.jpg');background-size:cover;background-position:center;"></div>
+      <div class="product-label"><span>Rare</span></div>
+      <div class="product-overlay"></div>
+      <div class="product-info">
+        <div class="product-name">Black Makrana</div>
+        <div class="product-desc">Bold · Contemporary</div>
+      </div>
+    </div>
+    <div class="product-card" data-name="albeta marble" data-usage="kitchen bathroom flooring" data-tone="warm" data-price="63" data-market="70">
+      <div class="product-swatch swatch-3" style="background-image:url('images/marble-013.jpg');background-size:cover;background-position:center;"></div>
+      <div class="product-overlay"></div>
+      <div class="product-info">
+        <div class="product-name">Albeta Marble</div>
+        <div class="product-desc">Warm Ivory · Veined</div>
+      </div>
+    </div>
+    <div class="product-card" data-name="dungri white" data-usage="flooring staircase temple" data-tone="white" data-price="58" data-market="65">
+      <div class="product-swatch swatch-4" style="background-image:url('images/marble-002.jpg');background-size:cover;background-position:center;"></div>
+      <div class="product-overlay"></div>
+      <div class="product-info">
+        <div class="product-name">Dungri White</div>
+        <div class="product-desc">Subtle Grain · Elegant</div>
+      </div>
+    </div>
+    <div class="product-card" data-name="brown marble" data-usage="outdoor garden flooring" data-tone="warm" data-price="67" data-market="75">
+      <div class="product-swatch swatch-5" style="background-image:url('images/marble-012.jpg');background-size:cover;background-position:center;"></div>
+      <div class="product-label"><span>New</span></div>
+      <div class="product-overlay"></div>
+      <div class="product-info">
+        <div class="product-name">Brown Marble</div>
+        <div class="product-desc">Earthy · Rustic</div>
+      </div>
+    </div>
+    <div class="product-card" data-name="grey pearl" data-usage="interior wall kitchen flooring" data-tone="grey" data-price="72" data-market="80">
+      <div class="product-swatch swatch-6" style="background-image:url('images/marble-003.jpg');background-size:cover;background-position:center;"></div>
+      <div class="product-overlay"></div>
+      <div class="product-info">
+        <div class="product-name">Grey Pearl</div>
+        <div class="product-desc">Modern · Sleek</div>
+      </div>
+    </div>
+    <div class="no-results" id="noResults">
+      <h3>No marble found</h3>
+      <p>Try adjusting your filters or search term</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MAKRANA -->
+<section id="why">
+  <div class="why-inner">
+    <p class="section-label reveal">Why Choose Us</p>
+    <h2 class="section-title reveal">Quality You Can Trust</h2>
+    <div class="divider reveal"></div>
+
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">🏛️</div>
+        <h3>Authentic Origin</h3>
+        <p>Sourced directly from the Makrana mines of Rajasthan — the same quarries that produced marble for the Taj Mahal.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">✂️</div>
+        <h3>Custom Cutting</h3>
+        <p>Each slab is precision-cut to your exact measurements — flooring, countertops, temples, monuments, or custom art pieces.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">🚚</div>
+        <h3>Pan-India Delivery</h3>
+        <p>We deliver safely packed marble to any location across India, with bulk freight available for large projects.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-4">
+        <div class="why-icon">💎</div>
+        <h3>Grade Certification</h3>
+        <p>All our marble is graded and certified for quality. We offer A-Grade, B-Grade, and Commercial grade across all varieties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE QUOTE -->
+<section id="heritage">
+  <blockquote class="heritage-quote reveal">
+    Built from the same sacred stone that has withstood centuries of time, weather, and wonder — Makrana marble is not a material, it is a legacy.
+  </blockquote>
+  <p class="heritage-attr reveal">— Makrana Marble Shop</p>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="process-inner">
+    <p class="section-label reveal">How It Works</p>
+    <h2 class="section-title reveal">From Quarry to Your Space</h2>
+    <div class="divider reveal"></div>
+
+    <div class="process-steps">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-circle">
+          ⛏️
+          <div class="step-num">1</div>
+        </div>
+        <h4 class="step-title">Mining</h4>
+        <p class="step-desc">Carefully extracted from the Makrana mines by skilled artisans</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-circle">
+          🔍
+          <div class="step-num">2</div>
+        </div>
+        <h4 class="step-title">Grading</h4>
+        <p class="step-desc">Each block is graded by quality, color, and veining patterns</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-circle">
+          📐
+          <div class="step-num">3</div>
+        </div>
+        <h4 class="step-title">Cutting</h4>
+        <p class="step-desc">Precision slabbing and custom-size cutting as per your order</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="step-circle">
+          ✨
+          <div class="step-num">4</div>
+        </div>
+        <h4 class="step-title">Finishing</h4>
+        <p class="step-desc">Polished, honed, or brushed finish to your specification</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="step-circle">
+          📦
+          <div class="step-num">5</div>
+        </div>
+        <h4 class="step-title">Delivery</h4>
+        <p class="step-desc">Safe packaging and delivery anywhere in India</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING COMPARISON -->
+<section id="pricing">
+  <div class="pricing-inner">
+    <p class="section-label reveal">Transparent Pricing</p>
+    <h2 class="section-title reveal">Why Pay More Elsewhere?</h2>
+    <div class="divider reveal"></div>
+    <div class="pricing-note reveal">
+      <span>✅ Our prices are consistently 10% lower than market rates — direct from source, no middlemen.</span>
+    </div>
+
+    <div class="reveal">
+      <div class="price-table-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+      <table class="price-table" id="priceTable">
+        <thead>
+          <tr>
+            <th>Marble Type</th>
+            <th>Usage</th>
+            <th>Market Price (₹/sq.ft)</th>
+            <th>Our Price (₹/sq.ft)</th>
+            <th style="text-align:center;">You Save</th>
+          </tr>
+        </thead>
+        <tbody id="priceTableBody">
+          <!-- Rendered by JS -->
+        </tbody>
+      </table>
+      </div><!-- /.price-table-wrap -->
+      <div class="price-footer">
+        <p>* Prices are indicative and may vary by grade, thickness & quantity. <strong>Call us for bulk pricing.</strong></p>
+        <p>Last updated: <strong id="priceUpdated">Today</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-inner">
+    <p class="section-label reveal" style="color:var(--gold);">Photo Gallery</p>
+    <h2 class="section-title light reveal">Our Work & Stone</h2>
+    <div class="divider center reveal"></div>
+    <div class="gallery-grid reveal" id="galleryGrid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <p class="section-label" style="color:var(--gold);">Get In Touch</p>
+      <h2 class="section-title light reveal">Request a Quote<br>or Sample</h2>
+      <div class="divider reveal"></div>
+      <p class="reveal">Whether you're planning a home renovation, a temple, or a large commercial project — we're here to help you select the perfect marble and get you the best price direct from the source.</p>
+
+      <div class="contact-detail reveal">
+        <div class="detail-item">
+          <span class="detail-icon">📍</span>
+          <div class="detail-text">
+            <strong>Location</strong>
+            <a href="https://maps.app.goo.gl/971e4G3c7Pf1ugiN8" target="_blank" style="color:var(--stone);text-decoration:none;border-bottom:1px solid rgba(158,150,144,0.3);">
+            Sherpur to Rampurhat Road, Vill & P.O. – Sahi Sherpur,<br>P.S. – Khargram, Murshidabad, West Bengal – 742159
+            </a>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">📞</span>
+          <div class="detail-text">
+            <strong>Phone / WhatsApp</strong>
+            <a href="tel:+917699383308" style="color:var(--stone);text-decoration:none;">+91 76993 83308</a>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">🕐</span>
+          <div class="detail-text">
+            <strong>Hours</strong>
+            Mon – Sat: 9:00 AM – 7:00 PM
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">🚚</span>
+          <div class="detail-text">
+            <strong>Delivery</strong>
+            Pan-India shipping available for bulk orders
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal">
+      <div class="form-field">
+        <label>Your Name</label>
+        <input type="text" placeholder="Full name" />
+      </div>
+      <div class="form-field">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="+91 XXXXX XXXXX" />
+      </div>
+      <div class="form-field">
+        <label>Marble Type</label>
+        <select>
+          <option value="">Select variety...</option>
+          <option>Makrana Pure White</option>
+          <option>Black Makrana</option>
+          <option>Albeta Marble</option>
+          <option>Dungri White</option>
+          <option>Brown Marble</option>
+          <option>Grey Pearl</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Usage</label>
+        <select>
+          <option value="">Project type...</option>
+          <option>Home Flooring</option>
+          <option>Kitchen Countertop</option>
+          <option>Temple / Mandir</option>
+          <option>Commercial Space</option>
+          <option>Monument / Grave</option>
+          <option>Export</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Message / Requirements</label>
+        <textarea rows="4" placeholder="Describe your project, quantity needed, budget..."></textarea>
+      </div>
+      <button class="btn-submit" onclick="submitEnquiry()">Send Enquiry via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    MAKRANA MARBLE
+    <span>Sahi Sherpur, Murshidabad, West Bengal</span>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Collection</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Makrana Marble. All rights reserved.</p>
+</footer>
+
+<!-- WhatsApp Float -->
+<!-- AI ASSISTANT PANEL -->
+<div id="aiPanel">
+  <div class="ai-header">
+    <div class="ai-avatar">🪨</div>
+    <div class="ai-header-text">
+      <div class="ai-name">MARBLE AI ASSISTANT</div>
+      <div class="ai-status" id="aiStatus">Ask me anything about marble</div>
+    </div>
+    <button class="ai-close" onclick="toggleAI()">✕</button>
+  </div>
+
+  <div class="ai-messages" id="aiMessages">
+    <div class="msg bot">
+      Namaste! 🙏 I'm your Makrana Marble expert. Ask me about marble types, pricing, what's best for your home or temple, or anything else!
+    </div>
+  </div>
+
+  <div class="ai-suggestions" id="aiSuggestions">
+    <button class="sug-btn" onclick="askAI('Which marble is best for temple flooring?')">Temple flooring?</button>
+    <button class="sug-btn" onclick="askAI('What is the cheapest marble available?')">Cheapest option?</button>
+    <button class="sug-btn" onclick="askAI('Which marble looks like Taj Mahal?')">Taj Mahal stone?</button>
+    <button class="sug-btn" onclick="askAI('What is good for kitchen countertop?')">Kitchen top?</button>
+  </div>
+
+  <div class="ai-input-row">
+    <input type="text" id="aiInput" placeholder="Ask about marble…" onkeydown="if(event.key==='Enter') sendAI()" />
+    <button id="aiSend" onclick="sendAI()">➤</button>
+  </div>
+  <div class="ai-powered">Powered by Gemini AI</div>
+</div>
+
+<!-- AI Button -->
+<button id="aiBtn" onclick="toggleAI()" title="Ask AI about marble">🤖</button>
+
+<a href="https://wa.me/917699383308" class="whatsapp-float" title="Chat on WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+</a>
+
+<script>
+  // ── NAVBAR SCROLL ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    const ss = document.getElementById('search-section');
+    if (ss) ss.classList.toggle('shadowed', window.scrollY > 200);
+  });
+
+  // ── SCROLL REVEAL ──
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // ── FILTER STATE ──
+  const filterState = { usage: 'all', tone: 'all', maxPrice: 150, query: '' };
+
+  function setFilter(key, value, btn) {
+    filterState[key] = value;
+    document.querySelectorAll(`[data-filter="${key}"]`).forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function updatePriceFilter(input) {
+    const val = +input.value;
+    filterState.maxPrice = val;
+    const display = document.getElementById('priceVal');
+    display.textContent = val >= 150 ? 'Any' : '₹' + val;
+    const pct = ((val - 50) / (150 - 50)) * 100;
+    input.style.setProperty('--fill', pct + '%');
+    applyFilters();
+  }
+
+  function applyFilters() {
+    filterState.query = document.getElementById('mainSearch').value.toLowerCase().trim();
+    const sort = document.getElementById('sortSelect').value;
+
+    const cards = Array.from(document.querySelectorAll('.product-card'));
+    let visible = 0;
+
+    // Collect cards with their data for sorting
+    const cardData = cards.map(card => ({
+      card,
+      name:  card.dataset.name  || '',
+      usage: card.dataset.usage || '',
+      tone:  card.dataset.tone  || '',
+      price: +card.dataset.price || 0,
+    }));
+
+    // Sort first
+    if (sort === 'price-asc')   cardData.sort((a,b) => a.price - b.price);
+    if (sort === 'price-desc')  cardData.sort((a,b) => b.price - a.price);
+    if (sort === 'name-az')     cardData.sort((a,b) => a.name.localeCompare(b.name));
+    if (sort === 'savings')     cardData.sort((a,b) => (b.card.dataset.market - b.price) - (a.card.dataset.market - a.price));
+
+    const grid = document.getElementById('productsGrid');
+    cardData.forEach(({ card }) => grid.appendChild(card));
+
+    // Filter
+    cardData.forEach(({ card, name, usage, tone, price }) => {
+      const matchQuery = !filterState.query ||
+        name.includes(filterState.query) ||
+        usage.includes(filterState.query) ||
+        tone.includes(filterState.query);
+
+      const matchUsage = filterState.usage === 'all' || usage.includes(filterState.usage);
+      const matchTone  = filterState.tone  === 'all' || tone === filterState.tone;
+      const matchPrice = filterState.maxPrice >= 150 || price <= filterState.maxPrice;
+
+      if (matchQuery && matchUsage && matchTone && matchPrice) {
+        card.style.display = '';
+        card.style.opacity = '1';
+        card.style.transform = 'scale(1)';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Also filter pricing table rows
+    filterPriceTable();
+
+    // Update count
+    const total = cards.length;
+    const countEl = document.getElementById('resultsCount');
+    const clearBtn = document.getElementById('clearBtn');
+    const noRes = document.getElementById('noResults');
+
+    countEl.innerHTML = `Showing <strong>${visible}</strong> of <strong>${total}</strong> marble types`;
+    noRes.classList.toggle('show', visible === 0);
+
+    const hasFilter = filterState.query || filterState.usage !== 'all' || filterState.tone !== 'all' || filterState.maxPrice < 150;
+    clearBtn.classList.toggle('visible', hasFilter);
+  }
+
+  function filterPriceTable() {
+    const rows = document.querySelectorAll('#priceTableBody tr');
+    rows.forEach(row => {
+      const nameTd = row.querySelector('.td-marble');
+      if (!nameTd) return;
+      const rowName = nameTd.textContent.toLowerCase();
+
+      const matchQuery = !filterState.query || rowName.includes(filterState.query);
+      const matchPrice = filterState.maxPrice >= 150 || (() => {
+        const ourPriceEl = row.querySelector('.our-price');
+        return ourPriceEl ? +ourPriceEl.textContent.replace(/[₹,]/g,'') <= filterState.maxPrice : true;
+      })();
+
+      row.style.display = (matchQuery && matchPrice) ? '' : 'none';
+    });
+  }
+
+  function clearAllFilters() {
+    filterState.usage = 'all';
+    filterState.tone  = 'all';
+    filterState.maxPrice = 150;
+    filterState.query = '';
+
+    document.getElementById('mainSearch').value = '';
+    document.getElementById('priceRange').value = 150;
+    document.getElementById('priceVal').textContent = 'Any';
+    document.getElementById('priceRange').style.setProperty('--fill', '100%');
+    document.getElementById('sortSelect').value = 'default';
+
+    document.querySelectorAll('.chip-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.value === 'all');
+    });
+
+    applyFilters();
+  }
+
+  // ── DEFAULT DATA ──
+  const DEFAULT_PRICES = [
+    { name:'Makrana Pure White', usage:'Flooring / Temple',    dot:'#f0ece5', market:85,  ours:76 },
+    { name:'Black Makrana',      usage:'Feature Wall / Decor', dot:'#2c2925', market:120, ours:108 },
+    { name:'Albeta Marble',      usage:'Kitchen / Bathroom',   dot:'#f0e8d5', market:70,  ours:63 },
+    { name:'Dungri White',       usage:'Flooring / Staircase', dot:'#ddd9d2', market:65,  ours:58 },
+    { name:'Brown Marble',       usage:'Outdoor / Garden',     dot:'#6e5a48', market:75,  ours:67 },
+    { name:'Grey Pearl',         usage:'Modern Interior',      dot:'#d0cbc4', market:80,  ours:72 },
+  ];
+
+  const DEFAULT_GALLERY = [
+    // ── Marble slabs (from first PDF)
+    { src:'images/marble-014.jpg', caption:'Makrana Pure White — Polished Flooring',     wide:true  },
+    { src:'images/marble-001.jpg', caption:'Black Marble with White Veins',               wide:false },
+    { src:'images/marble-021.jpg', caption:'White with Bold Gold Veins',                 wide:false },
+    { src:'images/marble-019.jpg', caption:'Calacatta White — Premium Grade',            wide:false },
+    { src:'images/marble-003.jpg', caption:'Grey Pearl — Large Slab Display',            wide:false },
+    { src:'images/marble-012.jpg', caption:'Brown Granite Marble — Rustic Texture',      wide:false },
+    { src:'images/marble-020.jpg', caption:'Black with Copper Grain',                    wide:false },
+    { src:'images/marble-005.jpg', caption:'Blue & Gold Artistic Marble',                wide:true  },
+    { src:'images/marble-006.jpg', caption:'White & Terracotta Designer Marble',         wide:false },
+    { src:'images/marble-009.jpg', caption:'Teal Onyx — Rare & Dramatic',               wide:false },
+    { src:'images/marble-010.jpg', caption:'White with Delicate Gold Veins',             wide:false },
+    { src:'images/marble-015.jpg', caption:'Yellow Onyx — Warm Flooring',                wide:false },
+    // ── Shop interior & products (from second PDF)
+    { src:'images/shop-000.jpg',   caption:'Our Showroom — Wall Tile Collection',        wide:true  },
+    { src:'images/shop-001.jpg',   caption:'Bathroom Display — Sanitary & Tiles',        wide:false },
+    { src:'images/shop-002.jpg',   caption:'Colourful Wash Basins — Swisware Brand',     wide:false },
+    { src:'images/shop-003.jpg',   caption:'Temple & Religious Tiles — Swastik / Om',    wide:false },
+    { src:'images/shop-004.jpg',   caption:'Mosaic & Decorative Wall Tiles',             wide:false },
+    { src:'images/shop-005.jpg',   caption:'Full Shop Interior — Tile Display Wall',     wide:true  },
+    { src:'images/shop-006.jpg',   caption:'3D & Floral Wall Tile Collection',           wide:false },
+    { src:'images/shop-007.jpg',   caption:'Gold Border Tiles — Premium Design',         wide:false },
+    { src:'images/shop-008.jpg',   caption:'Blue & Gold Marble — Showroom Display',      wide:false },
+    { src:'images/shop-009.jpg',   caption:'Blue Petal Tiles — Bathroom Collection',     wide:false },
+    { src:'images/shop-010.jpg',   caption:'Black Marble with White Veins',              wide:false },
+    { src:'images/shop-011.jpg',   caption:'Grey Speckled Granite Slab',                 wide:true  },
+    // ── More marble
+    { src:'images/marble-004.jpg', caption:'Cream Beige — Subtle Grain',                 wide:false },
+    { src:'images/marble-013.jpg', caption:'Albeta Cream — Polished Surface',            wide:false },
+    { src:'images/marble-000.jpg', caption:'Decorative Blue Petal Tiles',                wide:false },
+    { src:'images/marble-007.jpg', caption:'Geometric Hexagon Pattern Tiles',            wide:false },
+    { src:'images/marble-008.jpg', caption:'White Floral Decorative Tiles',              wide:false },
+    { src:'images/marble-011.jpg', caption:'Blue Leaf Pattern — Bathroom Tiles',         wide:true  },
+    { src:'images/marble-016.jpg', caption:'Grey-Green Marble — Modern Interior',        wide:false },
+    { src:'images/marble-017.jpg', caption:'Red Marble & Pearlescent Combo',             wide:false },
+  ];
+
+  // ── LOAD FROM STORAGE ──
+  function loadData() {
+    try {
+      return {
+        prices:  JSON.parse(localStorage.getItem('mm_prices'))  || DEFAULT_PRICES,
+        gallery: JSON.parse(localStorage.getItem('mm_gallery')) || DEFAULT_GALLERY,
+        heroTitle: localStorage.getItem('mm_heroTitle') || null,
+        heroSub:   localStorage.getItem('mm_heroSub')   || null,
+        aboutP1:   localStorage.getItem('mm_aboutP1')   || null,
+        aboutP2:   localStorage.getItem('mm_aboutP2')   || null,
+      };
+    } catch(e) {
+      return { prices: DEFAULT_PRICES, gallery: DEFAULT_GALLERY };
+    }
+  }
+
+  // ── RENDER PRICE TABLE ──
+  function renderPrices(prices) {
+    const tbody = document.getElementById('priceTableBody');
+    if (!tbody) return;
+    tbody.innerHTML = prices.map(row => {
+      const save = (row.market - row.ours).toFixed(0);
+      const pct  = Math.round((save / row.market) * 100);
+      return `<tr>
+        <td class="td-marble">
+          <span class="swatch-dot" style="background:${row.dot}"></span>${row.name}
+        </td>
+        <td style="color:var(--warm-gray);font-size:0.8rem;">${row.usage}</td>
+        <td><span class="market-price">₹${row.market}</span></td>
+        <td><span class="our-price">₹${row.ours}</span></td>
+        <td style="text-align:center"><span class="save-badge">SAVE ${pct}%</span></td>
+      </tr>`;
+    }).join('');
+    const upd = document.getElementById('priceUpdated');
+    if (upd) upd.textContent = localStorage.getItem('mm_updated') || new Date().toLocaleDateString('en-IN');
+  }
+
+  // ── RENDER GALLERY ──
+  function renderGallery(gallery) {
+    const grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+    grid.innerHTML = gallery.map(item => `
+      <div class="gallery-item${item.wide ? ' g-wide' : ''}">
+        ${item.src
+          ? `<img src="${item.src}" alt="${item.caption}" loading="lazy" />
+             <div class="img-overlay"><span class="img-caption">${item.caption}</span></div>`
+          : `<div class="gallery-placeholder">
+               <span>🖼️</span><span>${item.caption}</span>
+             </div>`
+        }
+      </div>`).join('');
+  }
+
+  // ── APPLY CUSTOM TEXT (syncs all admin-saved fields) ──
+  function applyText(data) {
+    // Hero
+    if (data.heroTitle) {
+      const el = document.querySelector('.hero-title');
+      if (el) el.innerHTML = data.heroTitle;
+    }
+    if (data.heroSub) {
+      const el = document.querySelector('.hero-subtitle');
+      if (el) el.textContent = data.heroSub;
+    }
+    const heroTag = localStorage.getItem('mm_heroTag');
+    if (heroTag) {
+      const el = document.querySelector('.hero-tag');
+      if (el) el.textContent = heroTag;
+    }
+    // About
+    const aboutHeading = localStorage.getItem('mm_aboutHeading');
+    if (aboutHeading) {
+      const el = document.querySelector('.about-text .section-title');
+      if (el) el.innerHTML = aboutHeading;
+    }
+    if (data.aboutP1) {
+      const paras = document.querySelectorAll('.about-text > p:not(.section-label)');
+      if (paras[0]) paras[0].textContent = data.aboutP1;
+    }
+    if (data.aboutP2) {
+      const paras = document.querySelectorAll('.about-text > p:not(.section-label)');
+      if (paras[1]) paras[1].textContent = data.aboutP2;
+    }
+    // Stats
+    const s1n = localStorage.getItem('mm_stat1num');
+    const s1l = localStorage.getItem('mm_stat1lbl');
+    const s2n = localStorage.getItem('mm_stat2num');
+    const s2l = localStorage.getItem('mm_stat2lbl');
+    const statNums = document.querySelectorAll('.stat-num');
+    const statLbls = document.querySelectorAll('.stat-lbl');
+    if (s1n && statNums[0]) statNums[0].textContent = s1n;
+    if (s1l && statLbls[0]) statLbls[0].textContent = s1l;
+    if (s2n && statNums[1]) statNums[1].textContent = s2n;
+    if (s2l && statLbls[1]) statLbls[1].textContent = s2l;
+    // Contact info
+    const phone   = localStorage.getItem('mm_contactPhone');
+    const wa      = localStorage.getItem('mm_contactWA');
+    const addr    = localStorage.getItem('mm_contactAddress');
+    const maps    = localStorage.getItem('mm_contactMaps');
+    const hours   = localStorage.getItem('mm_contactHours');
+    if (phone) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(el => el.textContent = phone);
+    }
+    if (wa) {
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(el => {
+        el.href = 'https://wa.me/' + wa.replace(/\D/g,'');
+      });
+    }
+    if (addr && maps) {
+      const addrLink = document.querySelector('.detail-text a[href*="maps"]');
+      if (addrLink) {
+        addrLink.href = maps;
+        addrLink.innerHTML = addr.replace(/\n/g, '<br>');
+      }
+    }
+    if (hours) {
+      document.querySelectorAll('.detail-text').forEach(el => {
+        if (el.querySelector('strong') && el.querySelector('strong').textContent === 'Hours') {
+          const strong = el.querySelector('strong');
+          el.innerHTML = '';
+          el.appendChild(strong);
+          el.append(' ' + hours);
+        }
+      });
+    }
+  }
+
+  // ── WHATSAPP ENQUIRY FORM SUBMIT ──
+  function submitEnquiry() {
+    const name    = document.querySelector('#contact input[placeholder="Full name"]')?.value?.trim();
+    const phone   = document.querySelector('#contact input[placeholder="+91 XXXXX XXXXX"]')?.value?.trim();
+    const marble  = document.querySelector('#contact select:nth-of-type(1)')?.value;
+    const usage   = document.querySelector('#contact select:nth-of-type(2)')?.value;
+    const message = document.querySelector('#contact textarea')?.value?.trim();
+
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!phone) { alert('Please enter your phone number.'); return; }
+
+    const wa = (localStorage.getItem('mm_contactWA') || '917699383308').replace(/\D/g,'');
+    const text = encodeURIComponent(
+      `*New Enquiry — Makrana Marble*\n\n` +
+      `👤 Name: ${name}\n` +
+      `📞 Phone: ${phone}\n` +
+      (marble  ? `🪨 Marble: ${marble}\n` : '') +
+      (usage   ? `🏠 Usage: ${usage}\n`   : '') +
+      (message ? `📝 Message: ${message}` : '')
+    );
+    window.open(`https://wa.me/${wa}?text=${text}`, '_blank');
+  }
+
+  // ── INIT ──
+  const data = loadData();
+  renderPrices(data.prices);
+  renderGallery(data.gallery);
+  applyText(data);
+
+  // Run filters on load to set count
+  setTimeout(() => applyFilters(), 100);
+
+  // Search on keyboard shortcut '/'
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+      e.preventDefault();
+      document.getElementById('mainSearch').focus();
+      document.getElementById('search-section').scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+  });
+  // API key lives securely in .env on the server — never in this file.
+  // The browser calls /api/ai (Cloudflare Pages) or /.netlify/functions/ai (Netlify).
+  const AI_ENDPOINT = (() => {
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') return '/.netlify/functions/ai';
+    if (host.includes('.netlify.app')) return '/.netlify/functions/ai';
+    return '/api/ai'; // Cloudflare Pages default
+  })();
+
+  const SHOP_CONTEXT = `You are an expert marble consultant for "Makrana Marble", a shop located at Sherpur to Rampurhat Road, Sherpur, Khargram, Brahmapur, West Bengal – 742159, India. Phone: +91 76993 83308.
+
+The shop sells these marble varieties with prices (per sq.ft):
+1. Makrana Pure White – ₹76 (Market: ₹85) – Best for: Flooring, Temple, Staircase. Taj Mahal grade. Bright white, almost no grain.
+2. Black Makrana – ₹108 (Market: ₹120) – Best for: Feature walls, Decor, Interior accents. Rare, bold.
+3. Albeta Marble – ₹63 (Market: ₹70) – Best for: Kitchen, Bathroom, Flooring. Warm ivory with natural veining.
+4. Dungri White – ₹58 (Market: ₹65) – Best for: Flooring, Staircase, Temple. Subtle grain, elegant.
+5. Brown Marble – ₹67 (Market: ₹75) – Best for: Outdoor, Garden, Flooring. Earthy, rustic tones.
+6. Grey Pearl – ₹72 (Market: ₹80) – Best for: Modern interior, Wall, Kitchen. Sleek and contemporary.
+
+All prices are 10% lower than market rate because they source directly from Makrana mines, Rajasthan — no middlemen. The marble is the same stone used in the Taj Mahal.
+
+Services: Custom cutting, polishing (polished/honed/brushed), Pan-India delivery, bulk pricing available, A/B/Commercial grade certification.
+
+Be helpful, warm, and knowledgeable. Answer in 2-4 sentences max. Recommend specific marble types when relevant. If asked about price, quote our price (not market). Speak naturally, like a knowledgeable marble expert. Do not use markdown formatting like ** or # in your replies.`;
+
+  let chatHistory = [];
+  let aiOpen = false;
+
+  function toggleAI() {
+    aiOpen = !aiOpen;
+    document.getElementById('aiPanel').classList.toggle('open', aiOpen);
+    document.getElementById('aiBtn').classList.toggle('open', aiOpen);
+    if (aiOpen) {
+      setTimeout(() => document.getElementById('aiInput').focus(), 300);
+    }
+  }
+
+  function sendAI() {
+    const input = document.getElementById('aiInput');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    askAI(text);
+  }
+
+  async function askAI(userText) {
+    // Open panel if closed
+    if (!aiOpen) {
+      aiOpen = true;
+      document.getElementById('aiPanel').classList.add('open');
+      document.getElementById('aiBtn').classList.add('open');
+    }
+
+    // Hide suggestions after first real query
+    document.getElementById('aiSuggestions').style.display = 'none';
+
+    // Add user message
+    appendMsg(userText, 'user');
+
+    // Typing indicator
+    const typingId = 'typing-' + Date.now();
+    appendTyping(typingId);
+
+    // Status
+    const status = document.getElementById('aiStatus');
+    status.textContent = 'Thinking…';
+    status.className = 'ai-status thinking';
+    document.getElementById('aiSend').disabled = true;
+
+    // Build history
+    chatHistory.push({ role: 'user', parts: [{ text: userText }] });
+
+    try {
+      const res = await fetch(AI_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: SHOP_CONTEXT }] },
+          contents: chatHistory,
+          generationConfig: { maxOutputTokens: 200, temperature: 0.7 }
+        })
+      });
+
+      if (!res.ok) {
+        throw new Error(`Server responded with status ${res.status}`);
+      }
+
+      const json = await res.json();
+      const reply = json?.candidates?.[0]?.content?.parts?.[0]?.text
+        || 'Sorry, I could not get a response. Please call us at +91 76993 83308!';
+
+      // Remove typing
+      const typingEl = document.getElementById(typingId);
+      if (typingEl) typingEl.remove();
+
+      appendMsg(reply, 'bot');
+      chatHistory.push({ role: 'model', parts: [{ text: reply }] });
+
+      // Auto-highlight matching product cards
+      highlightFromAI(userText + ' ' + reply);
+
+    } catch (err) {
+      const typingEl = document.getElementById(typingId);
+      if (typingEl) typingEl.remove();
+      appendMsg('Sorry, AI is unavailable right now. Please call us at +91 76993 83308 for expert advice!', 'bot');
+    }
+
+    status.textContent = 'Ask me anything about marble';
+    status.className = 'ai-status';
+    document.getElementById('aiSend').disabled = false;
+  }
+
+  function appendMsg(text, role) {
+    const msgs = document.getElementById('aiMessages');
+    const div = document.createElement('div');
+    div.className = `msg ${role}`;
+    div.textContent = text;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function appendTyping(id) {
+    const msgs = document.getElementById('aiMessages');
+    const div = document.createElement('div');
+    div.className = 'msg typing';
+    div.id = id;
+    div.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function highlightFromAI(text) {
+    const t = text.toLowerCase();
+    const map = {
+      'makrana pure white': '[data-name="makrana pure white"]',
+      'black makrana':       '[data-name="black makrana"]',
+      'albeta':              '[data-name="albeta marble"]',
+      'dungri':              '[data-name="dungri white"]',
+      'brown':               '[data-name="brown marble"]',
+      'grey pearl':          '[data-name="grey pearl"]',
+    };
+    document.querySelectorAll('.product-card').forEach(c => c.classList.remove('ai-highlight'));
+    Object.entries(map).forEach(([keyword, selector]) => {
+      if (t.includes(keyword)) {
+        const card = document.querySelector(selector);
+        if (card) {
+          card.classList.add('ai-highlight');
+          setTimeout(() => card.classList.remove('ai-highlight'), 4000);
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Environment variables — NEVER commit these
+.env
+.env.local
+.env.production
+.dev.vars
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Node (if you add any tooling later)
+node_modules/
