@@ -285,4 +285,4 @@ P.S. – Khargram, Murshidabad, West Bengal – 742159
 
 ---
 
-Built with Claude AI (claude.ai) | Photos © Makrana Marble
+| Photos © Makrana Marble
